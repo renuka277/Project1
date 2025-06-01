@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company-Specific Placement Preparation</title>
+<header>
+    <div class="header-left">
+        <h1>Company-Specific Placement Preparation Hub</h1>
+    </div>
+    <div class="header-right">
+                   </div>
+</header>
+
+
+    <style>
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlMVaiYFwPljf8sRPqAU3sSAj9GvB4bSdknw&s');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       
+/* Header Styles */
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out; /* Smooth hide and show effect */
+}
+
+header h1 {
+    font-size: 40px;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    z-index: 100;
+    transition: top 0.3s ease-in-out; /* Smooth hide and show effect */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #713f88;
+    text-decoration: underline;
+}
+
+/* Home Section Styles */
+.home-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.company-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.company-card:hover {
+    background-color: #8b4caf;
+    color: white;
+    transform: translateY(-5px);
+    border-color: #fff;
+}
+
+.company-card h3 {
+    margin: 0;
+}
+
+/* Marquee Styles */
+.marquee-container marquee {
+    font-weight: bold;
+}
+
+/* Content Area Styles */
+.content {
+    padding: 20px;
+    margin-top: 120px;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.content:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Company Section Styles */
+.company-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.company-section.active {
+    display: block;
+}
+
+.company-section h2 {
+    color: #fff;
+    font-size: 28px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+ font-size: 2rem;        
+    margin: 0;
+
+}
+
+/* Resource Card Styles */
+.resource-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+}
+
+.resource-card h3 {
+    color: #4CAF50;
+}
+
+.resource-card ul {
+    padding-left: 20px;
+}
+
+.resource-card ul li {
+    margin: 5px 0;
+}
+
+.resource-card ul li a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resource-card ul li a:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+/* Sticky Scroll for Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .company-card {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .home-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+/* Smooth Scroll Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #fff;
+    color: #4CAF50;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ddd;
+    transform: translateY(-2px);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4CAF50;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+header, nav, .marquee-container {
+            display: block;
+            clear: both;
+        }
+
+
+            </style>
+</head>
+<body>
+    
+   
+    <header>
+        <h1>Company-Specific Placement Preparation Hub</h1>
+        <div class="header-actions">
+            <span>Welcome, Student</span>
+                   </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="showSection('home')">Home</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('google')">Google</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('tcs')">TCS</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('infosys')">Infosys</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('amazon')">Amazon</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('microsoft')">Microsoft</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('apple')">Apple</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('wipro')">Wipro</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('accenture')">Accenture</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('oracle')">Oracle</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('deloitte')">Deloitte</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('dell')">Dell</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('capgemini')">Capgemini</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('cisco')">Cisco</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('ibm')">IBM</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('intel')">Intel</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('cognizant')">Cognizant</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <!-- Home Section -->
+        <section id="home" class="company-section active">
+            <h2>Welcome to the Placement Preparation Hub</h2>
+          
+            <div class="home-section">
+                <div class="company-card" onclick="showSection('google')" style=" align-items: center;">
+                <img src="https://www.zarla.com/images/google-logo-2400x2400-20220519.png?crop=1:1,smart&width=150&dpr=2" alt="Google Logo" style="max-width: 50px; margin-right: 20px;">
+              <div>
+                    <h3>Google</h3>
+                    <p>Start your journey here for Google placement preparation.</p> 
+            </div>
+                </div>
+               <div class="company-card" onclick="showSection('tcs')" style=" align-items: center;">
+    <img src="https://resources.ripplematch.com/hubfs/Tata%20Consultancy%20Services-1.png" alt="TCS logo" style="max-width:80px; margin-right:20px;">
+    <div>
+        <h3>TCS</h3>
+        <p>Begin your preparation for TCS interviews and tests.</p>
+    </div>
+</div>
+              <div class="company-card" onclick="showSection('infosys')">
+    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202402/Infosys_57.jpg?VersionId=Qf1UoSFCFKWGW4K.CDv.bRxYzkL2K5p9" alt="Infosys Logo" style="width: 120px; height: auto; margin-bottom: 10px;" />
+    <h3>Infosys</h3>
+    <p>Explore Infosys placement opportunities.</p>
+</div>
+
+
+<div class="company-card" onclick="showSection('microsoft')">
+    <img src="https://static.vecteezy.com/system/resources/previews/028/339/965/non_2x/microsoft-icon-logo-symbol-free-png.png" alt="Microsoft Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Microsoft</h3>
+    <p>Explore Microsoft placement opportunities.</p>
+</div>
+
+<div class="company-card" onclick="showSection('amazon')">
+    <img src="https://seekvectors.com/files/download/Amazon-Logo-07.jpg" alt="Amazon Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Amazon</h3>
+    <p>Explore Amazon placement opportunities.</p>
+</div>
+
+<div class="company-card" onclick="showSection('apple')">
+    <img src="https://i.pinimg.com/736x/1e/c1/1a/1ec11a869384bc5e59625bac39b6a099.jpg" alt="Apple Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Apple</h3>
+    <p>Explore Apple placement opportunities.</p>
+</div>
+
+               <div class="company-card" onclick="showSection('wipro')">
+    <img src="https://1000logos.net/wp-content/uploads/2020/05/Wipro-logo.jpg" alt="Wipro Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Wipro</h3>
+    <p>Explore Wipro placement opportunities.</p>
+</div>
+
+                <div class="company-card" onclick="showSection('accenture')">
+    <img src="https://crystalpng.com/wp-content/uploads/2024/09/Accenture-Logo.png" alt="Accenture Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Accenture</h3>
+    <p>Explore Accenture placement opportunities.</p>
+</div>
+
+               <div class="company-card" onclick="showSection('oracle')">
+    <img src="https://c8.alamy.com/comp/2CBMCKM/oracle-2CBMCKM.jpg" alt="Oracle Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Oracle</h3>
+    <p>Explore Oracle placement opportunities.</p>
+</div>
+
+                <div class="company-card" onclick="showSection('deloitte')">
+    <img src="https://www.resourcepanel.org/sites/default/files/deloitte.png" alt="Deloitte Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Deloitte</h3>
+    <p>Explore Deloitte placement opportunities.</p>
+</div>
+               <div class="company-card" onclick="showSection('dell')">
+    <img src="https://1000logos.net/wp-content/uploads/2017/07/Dell-Logo.png" alt="Dell Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Dell</h3>
+    <p>Explore Dell placement opportunities.</p>
+</div>
+
+                <div class="company-card" onclick="showSection('capgemini')">
+    <img src="https://i0.wp.com/mechanical.co.in/wp-content/uploads/2024/01/capgemini-logo.png?fit=1004%2C591&ssl=1" alt="Capgemini Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Capgemini</h3>
+    <p>Explore Capgemini placement opportunities.</p>
+</div>
+
+              <div class="company-card" onclick="showSection('cisco')">
+    <img src="https://static-00.iconduck.com/assets.00/cisco-icon-1024x1024-s2zuc5b8.png" alt="Cisco Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Cisco</h3>
+    <p>Explore Cisco placement opportunities.</p>
+</div>
+
+               <div class="company-card" onclick="showSection('cisco')">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-rJXPNesqBiIiAs53oScJ0sxaktDP4Kq6GA&s" alt="Cisco Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Cisco</h3>
+    <p>Explore Cisco placement opportunities.</p>
+</div>
+
+                <div class="company-card" onclick="showSection('intel')">
+    <img src="https://pngimg.com/uploads/intel/intel_PNG23.png" alt="Intel Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Intel</h3>
+    <p>Explore Intel placement opportunities.</p>
+</div>
+
+               <div class="company-card" onclick="showSection('cognizant')">
+    <img src="https://logosandtypes.com/wp-content/uploads/2022/03/cognizant.svg" alt="Cognizant Logo" style="width: 100px; height: auto; margin-bottom: 10px;" />
+    <h3>Cognizant</h3>
+    <p>Explore Cognizant placement opportunities.</p>
+</div>
+
+        </section>
+
+        <!-- Individual Company Sections with Links -->
+        <section id="deloitte" class="company-section">
+            <h2>Deloitte Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Deloitte Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/deloitte-interview-experience/">Deloitte Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/deloitte-interview-questions/">Deloitte Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="dell" class="company-section">
+            <h2>Dell Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Dell Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/dell-interview-experience/">Dell Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/dell-interview-questions/">Dell Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="capgemini" class="company-section">
+            <h2>Capgemini Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Capgemini Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/capgemini-interview-experience/">Capgemini Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/capgemini-interview-questions/">Capgemini Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="cisco" class="company-section">
+            <h2>Cisco Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Cisco Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/cisco-interview-experience/">Cisco Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/cisco-interview-questions/">Cisco Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="google" class="company-section">
+            <h2>Google Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Google Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/google-interview-experience/">Google Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/google-interview-questions/">Google Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="tcs" class="company-section">
+            <h2>TCS Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>TCS Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/tcs-interview-experience/">TCS Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/tcs-interview-questions/">TCS Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="infosys" class="company-section">
+            <h2>Infosys Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Infosys Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/infosys-interview-experience/">Infosys Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/infosys-interview-questions/">Infosys Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="amazon" class="company-section">
+            <h2>Amazon Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Amazon Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/amazon-interview-experience/">Amazon Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/amazon-interview-questions/">Amazon Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="microsoft" class="company-section">
+            <h2>Microsoft Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Microsoft Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/microsoft-interview-experience/">Microsoft Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/microsoft-interview-questions/">Microsoft Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="apple" class="company-section">
+            <h2>Apple Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Apple Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/apple-interview-experience/">Apple Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/apple-interview-questions/">Apple Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="wipro" class="company-section">
+            <h2>Wipro Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Wipro Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/wipro-interview-experience/">Wipro Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/wipro-interview-questions/">Wipro Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="accenture" class="company-section">
+            <h2>Accenture Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Accenture Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/accenture-interview-experience/">Accenture Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/accenture-interview-questions/">Accenture Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="oracle" class="company-section">
+            <h2>Oracle Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Oracle Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/oracle-interview-experience/">Oracle Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/oracle-interview-questions/">Oracle Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="ibm" class="company-section">
+            <h2>IBM Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>IBM Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/ibm-interview-experience/">IBM Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/ibm-interview-questions/">IBM Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="intel" class="company-section">
+            <h2>Intel Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Intel Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/intel-interview-experience/">Intel Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/intel-interview-questions/">Intel Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="cognizant" class="company-section">
+            <h2>Cognizant Placement Preparation</h2>
+            <div class="resource-card">
+                <h3>Cognizant Interview Resources</h3>
+                <ul>
+                    <li><a href="https://www.geeksforgeeks.org/cognizant-interview-experience/">Cognizant Interview Experience - GeeksforGeeks</a></li>
+                    <li><a href="https://www.interviewbit.com/cognizant-interview-questions/">Cognizant Interview Questions - InterviewBit</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Placement Preparation Hub | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.company-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Show the clicked section
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+    </script>
+</body>
+</html>
